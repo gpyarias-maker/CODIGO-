@@ -8,7 +8,7 @@ class Database:
             host="localhost",
             database="personas",  
             user="postgres",
-            password="123456",  # <-- Intenta con tu contraseña original aquí
+            password="123456",
             port=5432,
             client_encoding='utf8'
         )
