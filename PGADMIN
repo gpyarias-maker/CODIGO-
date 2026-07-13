@@ -1,0 +1,17 @@
+CREATE TABLE personas (
+    id SERIAL PRIMARY KEY, 
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    fecha_fallecimiento DATE DEFAULT NULL,
+    vigente BOOLEAN DEFAULT TRUE,
+    salario DECIMAL(10, 2) DEFAULT 0.00
+);
+
+INSERT INTO personas (nombre, apellido, fecha_nacimiento, fecha_fallecimiento, vigente, salario) 
+VALUES 
+('Alejandro', 'González', '1990-05-15', NULL, TRUE, 2500.50),
+('María Carmen', 'Rodríguez', '1985-11-22', NULL, TRUE, 4200.00),
+('Carlos', 'López', '1978-03-08', '2022-08-14', FALSE, 0.00),
+('Ana Sofía', 'Martínez', '2002-09-30', NULL, TRUE, 1850.75),
+('Luis Fernando', 'Pérez', '1965-07-04', NULL, FALSE, 3100.00);
