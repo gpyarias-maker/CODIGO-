@@ -3,7 +3,6 @@ from database import Database
 
 app = Flask(__name__)
 
-
 @app.route("/personas", methods=["GET"])
 def listar_personas():
     db = Database()
@@ -38,8 +37,6 @@ def listar_personas():
         personas_procesadas.append(p)
 
     return jsonify(personas_procesadas)
-
-
 
 @app.route("/personas/<int:id>", methods=["GET"])
 def obtener_persona(id):
@@ -77,7 +74,6 @@ def obtener_persona(id):
 
     return jsonify({"error": "Persona no encontrada"}), 404
 
-
 @app.route("/personas", methods=["POST"])
 def crear_persona():
     data = request.json
@@ -102,8 +98,6 @@ def crear_persona():
     return jsonify({
         "mensaje": "Persona creada exitosamente"
     }), 201
-
-
 
 @app.route("/personas/<int:id>", methods=["PUT"])
 def actualizar_persona(id):
@@ -137,8 +131,6 @@ def actualizar_persona(id):
         "mensaje": "Persona actualizada correctamente"
     })
 
-
-
 @app.route("/personas/<int:id>", methods=["DELETE"])
 def eliminar_persona(id):
     db = Database()
@@ -152,7 +144,6 @@ def eliminar_persona(id):
     return jsonify({
         "mensaje": "Persona eliminada correctamente"
     })
-
 
 if __name__ == "__main__":
     app.run(debug=True)
